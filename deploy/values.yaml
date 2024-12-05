@@ -3,4 +3,4 @@ regclient:
 image:
   registry: docker.io
   repository: mosipqa/registration-client
-  tag: develop
+  tag: 1.3.x
