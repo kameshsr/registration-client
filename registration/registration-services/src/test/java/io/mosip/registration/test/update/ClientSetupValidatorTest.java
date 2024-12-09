@@ -119,7 +119,6 @@ public class ClientSetupValidatorTest {
 		assertEquals(Boolean.FALSE, clientSetupValidator.isPatch_downloaded());
 	}
 
-	@Ignore  //TODO: to be enable later. disabling due to provider.pem expiry
 	@Test
 	public void isUnknown_jars_found() throws RegBaseCheckedException {
 		clientSetupValidator.isUnknown_jars_found();

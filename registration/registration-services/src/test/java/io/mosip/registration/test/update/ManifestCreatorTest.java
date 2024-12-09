@@ -56,10 +56,9 @@ public class ManifestCreatorTest extends ManifestCreator {
     }
 
 
-    @Ignore  //TODO: to be enable later. disabling due to provider.pem expiry
     @Test
     public void integrityCheckTest() throws IOException {
-        URL url = ManifestCreatorTest.class.getResource("/setup/registration-api-1.2.0-SNAPSHOT.jar");
+        URL url = ManifestCreatorTest.class.getResource("/setup/registration-api-1.3.0-20241205.061943-6.jar");
         X509Certificate certificate =  ClientIntegrityValidator.getCertificate();
         JarFile jarFile = new JarFile(url.getFile());
         ClientIntegrityValidator.verifyIntegrity(certificate, jarFile);
@@ -67,7 +66,7 @@ public class ManifestCreatorTest extends ManifestCreator {
 
     @Test(expected = SecurityException.class)
     public void integrityCheckTest2() throws IOException {
-        URL url = ManifestCreatorTest.class.getResource("/setup/registration-api-1.2.0-SNAPSHOT.jar");
+        URL url = ManifestCreatorTest.class.getResource("/setup/registration-api-1.3.0-20241205.061943-6.jar");
         JarFile jarFile = new JarFile(url.getFile());
         ClientIntegrityValidator.verifyIntegrity(null, jarFile);
     }
